@@ -24,8 +24,18 @@ unzip terraform_*_linux_*.zip
 // installing (by moving to /user/local/bin) terraform
 sudo mv terraform /usr/local/bin
 
+// Removing old files
+rm terraform_*.zip
+
 // Checking terraform is installed
 terraform --version
+
+## Creating a .gitIgnore
+
+touch .gitignore
+
+// Either open the file in sudo/vim OR edit it in vsCode
+// Go to this link (https://github.com/github/gitignore/blob/master/Terraform.gitignore) and paste the code in your .gitignore
 
 ## Install AWS CLI 
 
