@@ -16,3 +16,4 @@ List of resources:
 2) DO NOT PUSH SECRET STUFF UP
 3) Make them talk to each other
 4) NO SECRETs
+
