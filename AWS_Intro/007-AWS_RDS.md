@@ -16,6 +16,8 @@ FREE TIER VERY IMPORTANT
 CHECK PRICE AT BOTTOM OF PAGE
 - delete database - no snapshot
 
+SUBNET GROUP NOT SUBNET SPECIFICALLY
+
 Exercise Create an RDS
 
 # Connect to RDS

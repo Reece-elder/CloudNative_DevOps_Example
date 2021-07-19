@@ -12,7 +12,7 @@ resource "aws_subnet" "public_a" {
   }
 }
 
-resource "aws_subnet" "public_a" {
+resource "aws_subnet" "public_b" {
   vpc_id = var.vpc_id
   cidr_block = var.cidr_b
   availability_zone = var.av_zone
