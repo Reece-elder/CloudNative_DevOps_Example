@@ -1,0 +1,8 @@
+# Child Groups
+# All hosts belong to the 'all' group, but sometimes you want to create seperate groups
+<diagram>
+
+all: 
+  children:
+    group-1: 
+      hosts: 

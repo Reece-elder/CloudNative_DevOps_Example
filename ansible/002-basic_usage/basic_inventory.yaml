@@ -4,8 +4,8 @@
 all:
   hosts: 
     123.456.789.0:
-    123.456.789.0:
-    123.456.789.0:
+    223.456.789.0:
+    323.456.789.0:
   # Optional variables for Ansible to connect
   vars:
     # Where is the private key
