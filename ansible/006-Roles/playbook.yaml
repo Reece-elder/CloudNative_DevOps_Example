@@ -1,0 +1,16 @@
+# Creating a role called common which installs common apps on all
+# Creating a role called Jenkins which installs jenkins
+- hosts: all
+  become: true
+  roles: 
+  - common
+
+# Exercise - Create a role for installing nginx and checking if it has started 
+
+- hosts: jenkins
+  become: true
+  roles:
+  - jenkins
+
+# Exercise - Do the roles tutorials 
+# Exercise - Use a role to install Docker

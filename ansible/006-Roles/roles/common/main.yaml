@@ -1,0 +1,10 @@
+# Main.yaml structure
+# No need to specify hosts or parent level tasks. Jump straight into tasks
+
+Install wget, unzip, curl and mySQL
+
+- name: 'Install wget'
+  apt: 
+    name: wget
+    state: latest
+    update_cache: true
