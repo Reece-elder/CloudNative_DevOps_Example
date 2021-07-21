@@ -1,0 +1,17 @@
+FROM nginx:latest
+
+WORKDIR ~/debug
+
+RUN touch newfile.txt
+
+ADD /add.html /usr/share/nginx/html/
+
+COPY /copy.html /usr/share/nginx/html/
+
+EXPOSE 80
+
+ENV fileName=testFile.txt
+
+RUN touch $fileName
+
+# No need to add an entrypoint as nginx already has one (https://github.com/nginxinc/docker-nginx/blob/04d0c5754673d6880b91e94c3cebaa767d9a1af7/Dockerfile)
