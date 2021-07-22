@@ -1,0 +1,46 @@
+# Extra Stuff
+
+# Register
+# Register saves the json output of a task to a variable of name
+# register: <var_name>
+
+# This variable can be accessed with "{{ <var_name> }}"
+
+- hosts: all
+  become: true
+  tasks:
+  - name: Install unzip
+    apt:
+      name: nginx
+      state: present
+      update_cache: true
+    register: unzip_info
+
+  - name: printing nginx info to console
+    debug:
+      msg: "{{ unzip_info }}"
+
+# When
+# When only runs a task when the condition is true
+# when: 4 < 5
+
+  - name: 'Print 4 is bigger than 5'
+    debug:
+      msg: "4 is bigger than 5"
+    when: 4 < 5
+
+# Wait for
+# Waits for a set time period before proceeding with the playbook
+
+  - name: 'Wait for 15 seconds'
+    debug: 
+      msg: 'Waiting for 15 seconds'
+    wait_for:
+      timeout: 15
+
+# Exercise - Do playbook exercises
+
+# More complex Ansible
+# Install Jenkins using Ansible, use online resources to work out how to install
+# One method may require apt_key to grab Jenkins key and apt_repository to install new repo
+

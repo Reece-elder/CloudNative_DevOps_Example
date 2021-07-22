@@ -1,0 +1,19 @@
+# Playbook to tell Ansible what to do
+
+
+# Connects to 'all' hosts
+- hosts: all
+  # Lists the tasks we're wanting to do on each host
+  tasks: 
+    # Lists the name of the first task and what we're wanting it to do 
+  - name: "run Ping module"
+    # Running the Ping module as the first task (a test to see if it can ssh to each host)
+    ping: 
+
+# Run ansible with ansible-playbook -v -i inventory.yaml playbook.yaml
+# ansible-playbook = command
+# -v = verbose (logs more stuff)
+# -i <inventory to specify> = specifying the inventory.yaml
+# playbook.yaml = the playbook you're running
+
+# Exercise - Run the ping module on each of the VMS you've created

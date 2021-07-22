@@ -1,0 +1,22 @@
+# Child Groups
+# All hosts belong to the 'all' group, but sometimes you want to create seperate groups
+# <diagram>
+
+# Two groups, nginx and wget
+
+all: 
+  children:
+    nginx: 
+      hosts: 
+        123.234.54.31:
+      vars:
+        ansible_ssh_private_key_file: "~/.ssh/not_default_name"
+        ansible_user: ubuntu
+    wget: 
+      hosts: 
+        123.234.54.35:
+      vars:
+        ansible_ssh_private_key_file: "~/.ssh/not_default_name"
+        ansible_user: ubuntu
+
+  # Create an inventory with 2+ groups

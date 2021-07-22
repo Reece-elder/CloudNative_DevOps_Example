@@ -1,0 +1,13 @@
+# Comments can be made with a hash
+
+# Ignores credential_data in folder called secrets
+secrets/credential_data
+
+# Ignores all text files
+*.txt
+
+# Ignores all markdown files in any sub directory
+*/*.md
+
+# Makes an exception for README.md
+!README.md

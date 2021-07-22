@@ -1,0 +1,17 @@
+# All values come off of 'all'
+# 'all' is a group, hosts should follow any group
+
+all:
+  hosts: 
+    123.456.789.0:
+    223.456.789.0:
+    323.456.789.0:
+  # Optional variables for Ansible to connect
+  vars:
+    # Where is the private key
+    ansible_ssh_private_key_file: "~/.ssh/not_default_name"
+    # What is the name of the user
+    ansible_user: ubuntu
+
+# Exercise - using Terraform create 3 EC2s you can SSH to from the same machine that has Terraform/Ansible
+# - Add the IP addresses of these EC2s to your inventory file, specifying ssh key if necessary

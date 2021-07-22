@@ -1,0 +1,40 @@
+# file group will be creating a new file
+# wget group will be installing wget 
+# both groups will be installing unzip and print out a message
+
+# become: true does the tasks as sudo 'Become Sudo = true'
+
+- hosts: all
+  become: true
+  tasks:
+  - name: 'Print out Hello World'
+    debug:
+      msg: "Hey, this is me printing out hello world"
+  - name: 'Installing unzip'
+  # Using apt module for a task
+    apt:
+      # using apt module find package named unzip
+      name: unzip
+      # running sudo-apr-get update before installing
+      update_cache: true
+
+- hosts: wget
+  become: true
+  tasks: 
+  - name: 'Installing wget'
+    apt: 
+      name: wget
+      update_cache: true
+
+- hosts: file
+  become: true
+  tasks:
+    - name: 'Creating a new file called test.txt'
+      file:
+        path: ~/test.txt
+        state: touch
+
+# Exercise - Create a playbook with two groups.
+# One group installs 'curtain' using apt
+# The other group installs 'tree' using apt
+# Both groups install plan and debug a message saying "Hello!"

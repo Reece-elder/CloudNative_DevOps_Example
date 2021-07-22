@@ -1,0 +1,29 @@
+# apt states possible:
+# - absent
+# - build-dep
+# - latest
+# - present
+
+# if nginx is not installed.. install latest nginx
+# ig nginx is installed.. but not the lates.. install latest nginx
+# if nginx is installed and is the latest.. do nothing
+
+
+
+- hosts: all
+  become: true
+  tasks: 
+  - name: 'Check if nginx is installed'
+    apt:
+      name: nginx
+      # State is saying 'Is installed nginx the latest version'
+      state: latest
+      update_cache: true
+
+    # Use service module to check status of nginx 
+  - name: 'Check if nginx has started'
+    service: 
+      name: nginx
+      state: started
+
+# Exercise - install nginx and make sure nginx has stopped
