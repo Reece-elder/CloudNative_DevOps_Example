@@ -13,6 +13,8 @@
 
 `docker rename [OLD_NAME] [NEW_NAME]` renames a container
 
+refer to docker containers with ids, you can just use first number of id tbf
+
 Exercise:
 - Create an nginx container 
 - Stop the container
