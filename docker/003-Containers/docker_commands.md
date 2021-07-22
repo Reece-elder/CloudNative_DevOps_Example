@@ -36,6 +36,8 @@ docker exec -it [CONTAINER_NAME] [INTERPRETER]
 `docer exec -it alpine_container bash`
 Opens the container as a bash script to work with
 
+docker prune -a - removes EVERYTHING
+
 Exercise 
 - Create and run an alpine container
 - Create a new file in the container
