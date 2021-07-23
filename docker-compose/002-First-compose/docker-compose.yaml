@@ -1,0 +1,19 @@
+# Docker compose for creating an nginx container that ports from 80 to a random high port (such as 35000)
+
+# What version of docker compose yaml are you using
+version: "3.8"
+
+# What are the services/containers creating
+services:
+
+    # Our first and only service is an nginx
+    nginx:
+
+        # What is the image of the service we're creating
+        image: nginx:alpine
+
+        # What ports are we using, port 80 and using TCP
+        ports:
+        - target: 80
+          protocol: tcp
+

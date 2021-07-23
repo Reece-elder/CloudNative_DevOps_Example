@@ -17,6 +17,7 @@ Likely Options:
     docker run -p [external]:[Internal]
 
     #example (will open in localhost:8080 to container port 80)
+    <diagram showing host connecting to lots and lots of ports>
     docker run -p 8080:80 
 
 --name --name[name_of_container] : Names the container (not the name of the image), if no name is set gives a random name
