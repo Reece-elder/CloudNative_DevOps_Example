@@ -16,4 +16,5 @@
 
 # Mounts and replicas
 
-## Exercise - Mount a new index.html to an nginx container and create 3 replicas 
+## Exercise - Mount a new index.html to an nginx container and create 3 replicas
+
