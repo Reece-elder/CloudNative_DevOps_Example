@@ -13,3 +13,7 @@
 - Pass ENV_VAR to flask-app
 - Specify the target and published port of both containers
 - Make sure the nginx.conf matches the container
+
+# Mounts and replicas
+
+## Exercise - Mount a new index.html to an nginx container and create 3 replicas 
