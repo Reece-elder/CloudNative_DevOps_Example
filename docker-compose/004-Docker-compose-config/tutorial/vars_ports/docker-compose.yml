@@ -1,0 +1,37 @@
+# Environment vars and Ports
+
+# Env Vars are variables that exist in this environment 
+# # <diagram> 
+# - Allows you to not hard code in credential data
+# - Change data per container if need be
+
+# Ports are what ports this container can be accessed
+
+
+
+version: "3.8"
+services:
+  flask-app:
+    build: ./flask
+    ports:
+    - target: 5000      # Target - The port within the container that will be published [INTERNAL]
+      published: 5000   # Published - The port on the host that matches to the container [EXTERNAL]
+      protocol: tcp     # Protocol - The port protocol, leave as tcp or dont bother setting
+    # Using environment object you can pass ENV vars to containers
+    # [ENV_VAR_NAME]: [ENV_VAR_VALUE]  
+    environment:
+      MY_NAME: Reeeeeeece
+#     You can also pass in ENV VARS saved in the session (Saving the env vars on cli)
+#     MY_NAME: ${local_var}
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    # volumes:
+    # - type: bind
+    #   source: ./nginx/nginx.conf
+    #   target: /etc/nginx/nginx.conf
+
+Exercise - 

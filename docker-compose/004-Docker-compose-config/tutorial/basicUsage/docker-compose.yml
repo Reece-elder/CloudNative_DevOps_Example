@@ -1,0 +1,37 @@
+# Version - First key to be declared is version
+# Refers to the version of Compose file format, not docker Engine. Use 3.8
+# Is a string and not a number
+
+version: "3.8"
+
+# Services - Services are containers OR collections of containers in Docker. 
+# Name each service and set its properties to define how it is built. 
+# # IT MUST contain Image, either with image: or build: 
+
+services:
+    nginx:
+        image: nginx:latest
+        # Container name can be set with container_name otherwise will be [PARENT_DIRECTORY][SERVICE][NUMBER]
+        container_name: nginx  
+    flask:
+        build: ./flask 
+
+# Networking - When using docker compose a custom bridge network is created automatically
+# - Allowing DNS naming to work
+
+# Building images
+# If you need to build an image, explicitly define where the Dockerfile is
+flask-app:
+    build: ./flask
+
+# Using existing images (either locally or from docker hub) use image
+database:
+    image: mysql:latest 
+
+# Using both build and image
+# Compose first finds the image, if not exist it will build it
+custom_image:
+    image: newImage:latest
+    build: ./path/Dockerfile
+
+

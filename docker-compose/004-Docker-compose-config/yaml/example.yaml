@@ -1,0 +1,48 @@
+# YAML - Yaml Ain't Markup Language (recursive)
+# YAML - Yet Another Markup Language
+
+# YAML used for configuration files, but has similarities to JSON
+# Easy for humans to read, so good for human config
+
+# Three dashes at the top to start a new file
+---
+
+# YAML = key: value pairs
+# Colon after key and space before value
+
+# NO TABS. 2 or 4 Spaces, enter with VSCode does this for you
+
+name: "Piper Lonnie"                # String with ""
+age: 34                             # Number with no ""
+ordered_before: true                # Boolean with lowercase
+avg_rating: 4.7                     # Interger same as Number
+previous_ratings:                   # Array with colon at end
+  - 3.6                             # New value in array is two spaces + '-'
+  - 4.5
+  - 5.0
+  - 2.3
+address:                            # Object is an array of key value pairs, ends in colon
+  house_number: 56                  # key value pairs of objects are indented with 2/4 spaces and follow other
+  street: "new street"
+  post_code: "SS6 7RD"
+orders:                             # Array of Objects same as array or object for key
+  - object_name: "incense stick"    # First object has a dash (to suggest its an array), two spaces + -
+    price: 32                       # Other key value pairs of object follow parent structure
+    quantity: 4
+  - object_name: "table"
+    price: 14.52
+    quantity: 3
+  - object_name: "chocolates"
+    price: 78.93
+    quantity: 2
+    ingredients:                    # Objects within objects within objects are doable!
+      first_ingredient:
+        name: "cocoa"
+        amount:
+          value: 42
+          unit: "grams"
+...
+  
+Exercise - Data Serialisation - YAML exercise
+
+

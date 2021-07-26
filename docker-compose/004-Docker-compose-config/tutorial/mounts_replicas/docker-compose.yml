@@ -1,0 +1,23 @@
+Mounts and Replicas
+
+Bind Mounts are methods of passing local files to a container as it is deployed
+Useful for nginx.conf rather than creating a new image
+
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    volumes:
+    - type: bind                      # What type of volume? bind mounts are binds 
+      source: ./nginx.conf            # Where is the file you want to mount to the container
+      target: /etc/nginx/nginx.conf   # Where do you want to put the file
+
+Replicas are used to define how many instances of a container, like the --scale
+
+version: "3.8"
+services:
+  my-app:
+    build: ./flask
+    deploy:                           # Using the deploy object pass in the data
+    - replicas: 3                     # replicas key value pair to choose how many
+
